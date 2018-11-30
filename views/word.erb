@@ -1,7 +1,7 @@
 <h1><%= @word_name %></h1>
 <form action="/word/<%= @word.id %>" method="post">
   <label for="definiton">Add a definition to this word:</label><br>
-  <input type="text" name="definition">
+  <input type="text" name="definition" required pattern=".*\S+.*" title="This field is required">
   <button type="submit" name="button">Add definition</button>
 </form>
 <form action="/word-list" method="get">

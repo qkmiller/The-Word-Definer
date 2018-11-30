@@ -2,9 +2,9 @@
 
 <form class="form-group" action="/word-list" method="post">
   <label for="word">Word:</label>
-  <input type="text" name="word"><br>
+  <input type="text" name="word" required pattern=".*\S+.*" title="This field is required"><br>
   <label for="definition">Definition:</label>
-  <input type="text" name="definition" value=""><br>
+  <input type="text" name="definition" required pattern=".*\S+.*" title="This field is required"><br>
   <button type="submit" name="button">Submit</button>
 </form>
 
