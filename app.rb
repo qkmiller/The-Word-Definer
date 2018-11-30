@@ -8,6 +8,7 @@ require('pry')
 @@word_list = []
 
 get('/') do
+  @@word_list = []
   erb(:home)
 end
 
