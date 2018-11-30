@@ -51,3 +51,17 @@ describe('the word definer', {:type => :feature}) do
     end
   end
 end
+describe('the word definer', {:type => :feature}) do
+  context('when viewing a words definitions, and the "Add definition" button is clicked') do
+    it('adds a definition to the current selected word') do
+      visit('/')
+      fill_in('word', :with => 'test')
+      fill_in('definition', :with => 'test2')
+      click_button('Submit')
+      click_link('test')
+      fill_in('definition', :with => 'more')
+      click_button('Add definition')
+      expect(page).to have_content("more")
+    end
+  end
+end

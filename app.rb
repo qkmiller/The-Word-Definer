@@ -6,6 +6,7 @@ require('./lib/Word')
 require('pry')
 
 @@list = []
+@@current_word = ''
 
 get('/') do
   @@list = []
@@ -30,5 +31,10 @@ get('/word/:id') do
   word = WordModule::Word.find(params[:id])
   @word_name = word.word_name
   @definition_list = word.definition_list
+  erb(:word)
+end
+
+post('/word/:id') do
+  word = WordModule::Word.find(params[:id])
   erb(:word)
 end
