@@ -1,6 +1,6 @@
 <h1><%= @word_name %></h1>
 <ul>Definition(s):<ul>
-<% @definition_list.each do |definition| %>
+<% @word.definition_list.each do |definition| %>
   <li><%= definition %></li>
 <% end %>
 <form action="/word/<%= @word.id %>" method="post">

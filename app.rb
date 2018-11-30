@@ -6,12 +6,10 @@ require('./lib/Word')
 require('pry')
 
 @@list = []
-@@current_word = ''
 
 get('/') do
   @@list = []
   WordModule::Word.clear
-  # binding.pry
   erb(:home)
 end
 
@@ -30,13 +28,11 @@ end
 get('/word/:id') do
   @word = WordModule::Word.find(params[:id])
   @word_name = @word.word_name
-  @definition_list = @word.definition_list
   erb(:word)
 end
 post('/word/:id') do
   @word = WordModule::Word.find(params[:id])
   @word_name = @word.word_name
   @word.definition_list.push(params.fetch("definition"))
-  @definition_list = @word.definition_list
   erb(:word)
 end
