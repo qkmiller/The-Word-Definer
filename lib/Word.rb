@@ -30,7 +30,7 @@ module WordModule
     def self.all
       @@word_list
     end
-
+    
     def self.see_word_ids
       @@word_id_list
     end
