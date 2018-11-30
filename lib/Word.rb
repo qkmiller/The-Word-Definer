@@ -11,5 +11,6 @@ module WordModule
     def add_definition(definition)
       @definition_list.push(definition)
     end
+
   end
 end

@@ -19,4 +19,11 @@ describe (WordModule::Word) do
     end
   end
 
+  describe('#all') do
+    it('should list all instances of Word') do
+      new_word = WordModule::Word.new("Blank")
+      new_word2 = WordModule::Word.new("Test")
+      expect(WordModule::Word.all).to(eq(["Blank", "Test"]))
+    end
+  end
 end
