@@ -38,3 +38,16 @@ describe('the word definer', {:type => :feature}) do
     end
   end
 end
+describe('the word definer', {:type => :feature}) do
+  context('when viewing a words definitions, and the "Go back" button is clicked') do
+    it('goes back to the homepage, while keeping the word-list on the homepage') do
+      visit('/')
+      fill_in('word', :with => 'test')
+      fill_in('definition', :with => 'test2')
+      click_button('Submit')
+      click_link('test')
+      click_button('Go back')
+      expect(page).to have_content("test")
+    end
+  end
+end
