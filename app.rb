@@ -5,19 +5,27 @@ also_reload('lib/**/*.rb')
 require('./lib/Word')
 require('pry')
 
-@@word_list = []
+@@list = []
 
 get('/') do
-  @@word_list = []
+  @@list = []
+  # binding.pry
   erb(:home)
 end
 
 post('/') do
   word = WordModule::Word.new(params.fetch("word"))
-  @@word_list.push(word)
+  word.save
+  word_definition = word.definition_list.push(params.fetch("definition"))
+  # binding.pry
+  @@list.push(word)
   erb(:home)
 end
 
 get('/word/:id') do
+  word = WordModule::Word.find(params[:id])
+  binding.pry
+  @word_name = word.word_name
+  # @definitions = word.definition_list.push(params[:id])
   erb(:word)
 end

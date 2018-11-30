@@ -9,8 +9,8 @@
 </form>
 
 <h2>List of words</h2><br>
-<% @@word_list.each do |word| %>
-  <a href="/word/<%= word.id %>"><%= word.word_name %></a>
+<% @@list.each do |item| %>
+  <a href="/word/<%= item.id %>"><%= item.word_name %></a>
 <% end %>
 <br>
 <form class="form-group" action="/" method="get">

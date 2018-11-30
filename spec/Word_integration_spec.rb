@@ -26,3 +26,14 @@ describe('the word definer', {:type => :feature}) do
     expect(page).to have_no_content("test")
   end
 end
+describe('the word definer', {:type => :feature}) do
+  context('when a word is clicked') do
+    it('takes you to word.erb, with the definitions displayed') do
+      visit('/')
+      fill_in('word', :with => 'test')
+      fill_in('definition', :with => 'test')
+      click_link('test')
+      expect(page).to have_no_content("test")
+    end
+  end
+end

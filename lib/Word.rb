@@ -2,7 +2,7 @@ module WordModule
   class Word
 
     attr_accessor :word_name, :definition_list
-    attr_accessor :id
+    attr_reader :id
 
     @@word_list = []
     @@word_id_list = []
@@ -39,7 +39,7 @@ module WordModule
     end
 
     def self.find(id)
-      @@word_objects[id - 1].word_name
+      @@word_objects[id.to_i - 1]
     end
   end
 end
