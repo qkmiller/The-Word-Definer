@@ -21,6 +21,7 @@ post('/word-list') do
     word.definition_list.push(params.fetch("definition"))
   end
   @@list.push(word)
+  @@list = @@list.sort_by {|obj| obj.word_name}
   erb(:home)
 end
 
@@ -40,5 +41,6 @@ post('/word/:id') do
   else
     @word.definition_list.push(params.fetch("definition"))
   end
+  binding.pry
   erb(:word)
 end

@@ -34,12 +34,20 @@ module WordModule
       @@word_list
     end
 
+    def self.all_objects
+      @@word_objects
+    end
+
     def self.see_word_ids
       @@word_id_list
     end
 
     def self.find(id)
       @@word_objects[id.to_i - 1]
+    end
+
+    def self.sort
+
     end
   end
 end
