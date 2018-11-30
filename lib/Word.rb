@@ -8,5 +8,8 @@ module WordModule
       @definition_list = []
     end
 
+    def add_definition(definition)
+      @definition_list.push(definition)
+    end
   end
 end

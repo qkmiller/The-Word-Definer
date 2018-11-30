@@ -15,7 +15,7 @@ describe (WordModule::Word) do
     it('should add a definition to definition_list') do
       new_word = WordModule::Word.new("Blank")
       new_word.add_definition("blank definition")
-      expect(new_word.definition).to(eq(["blank definition"]))
+      expect(new_word.definition_list).to(eq(["blank definition"]))
     end
   end
 
