@@ -5,7 +5,7 @@ module WordModule
 
     def initialize(word)
       @word_name = word
-      # @definition = []
+      @definition = []
     end
 
   end
