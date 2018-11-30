@@ -31,9 +31,10 @@ describe('the word definer', {:type => :feature}) do
     it('takes you to word.erb, with the definitions displayed') do
       visit('/')
       fill_in('word', :with => 'test')
-      fill_in('definition', :with => 'test')
+      fill_in('definition', :with => 'test2')
+      click_button('Submit')
       click_link('test')
-      expect(page).to have_no_content("test")
+      expect(page).to have_content("test2")
     end
   end
 end
