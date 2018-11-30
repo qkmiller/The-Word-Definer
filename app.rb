@@ -16,7 +16,10 @@ end
 post('/word-list') do
   word = WordModule::Word.new(params.fetch("word"))
   word.save
-  @word_definition = word.definition_list.push(params.fetch("definition"))
+  if params.fetch("definition") == ""
+  else
+    word.definition_list.push(params.fetch("definition"))
+  end
   @@list.push(word)
   erb(:home)
 end
@@ -33,6 +36,9 @@ end
 post('/word/:id') do
   @word = WordModule::Word.find(params[:id])
   @word_name = @word.word_name
-  @word.definition_list.push(params.fetch("definition"))
+  if params.fetch("definition") == ""
+  else
+    @word.definition_list.push(params.fetch("definition"))
+  end
   erb(:word)
 end

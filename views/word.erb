@@ -1,8 +1,4 @@
 <h1><%= @word_name %></h1>
-<ul>Definition(s):<ul>
-<% @word.definition_list.each do |definition| %>
-  <li><%= definition %></li>
-<% end %>
 <form action="/word/<%= @word.id %>" method="post">
   <label for="definiton">Add a definition to this word:</label><br>
   <input type="text" name="definition">
@@ -11,3 +7,9 @@
 <form action="/word-list" method="get">
   <button type="submit" name="button">Go back</button>
 </form>
+<br>
+<ul>Definition(s):<ul>
+  <% @word.definition_list.each do |definition| %>
+  <li><%= definition %></li>
+  <% end %>
+</ul>
