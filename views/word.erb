@@ -3,6 +3,11 @@
 <% @definition_list.each do |definition| %>
   <li><%= definition %></li>
 <% end %>
-<form class="form-group" action="/word-list" method="get">
+<form action="/word/<%= @word.id %>" method="post">
+  <label for="definiton">Add a definition to this word:</label><br>
+  <input type="text" name="definition">
+  <button type="submit" name="button">Add definition</button>
+</form>
+<form action="/word-list" method="get">
   <button type="submit" name="button">Go back</button>
 </form>
