@@ -23,6 +23,8 @@ describe (WordModule::Word) do
     it('should list all instances of Word') do
       new_word = WordModule::Word.new("Blank")
       new_word2 = WordModule::Word.new("Test")
+      new_word.save
+      new_word2.save
       expect(WordModule::Word.all).to(eq(["Blank", "Test"]))
     end
   end

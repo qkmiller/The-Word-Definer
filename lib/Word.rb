@@ -3,6 +3,8 @@ module WordModule
 
     attr_accessor :word_name, :definition_list
 
+    @@word_list = []
+
     def initialize(word)
       @word_name = word
       @definition_list = []
@@ -12,5 +14,12 @@ module WordModule
       @definition_list.push(definition)
     end
 
+    def save
+      @@word_list.push(self.word_name)
+    end
+
+    def self.all
+      @@word_list
+    end
   end
 end
