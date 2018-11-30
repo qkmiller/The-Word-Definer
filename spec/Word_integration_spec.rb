@@ -17,3 +17,12 @@ describe('the word definer', {:type => :feature}) do
     expect(page).to have_content("test")
   end
 end
+describe('the word definer', {:type => :feature}) do
+  it('checks if the "Clear list" button is clearing the word list') do
+    visit('/')
+    fill_in('word', :with => 'test')
+    click_button('Submit')
+    click_button('Clear list')
+    expect(page).to have_no_content("test")
+  end
+end
