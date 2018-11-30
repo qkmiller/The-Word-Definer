@@ -2,7 +2,7 @@
 require('sinatra')
 require('sinatra/reloader')
 also_reload('lib/**/*.rb')
-require('./lib/Class')
+require('./lib/Word')
 require('pry')
 
 get('/') do
