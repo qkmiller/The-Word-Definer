@@ -22,6 +22,10 @@ post('/') do
   erb(:home)
 end
 
+post('/word-list') do
+  erb(:home)
+end
+
 get('/word/:id') do
   word = WordModule::Word.find(params[:id])
   @word_name = word.word_name
