@@ -8,10 +8,14 @@ require('pry')
 @@word_list = []
 
 get('/') do
-  erb(:input)
+  erb(:home)
 end
 
-
+post('/') do
+  word = WordModule::Word.new(params.fetch("word"))
+  @@word_list.push(word)
+  erb(:home)
+end
 
 get('/word/:id') do
   erb(:word)
