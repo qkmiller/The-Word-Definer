@@ -14,7 +14,7 @@ get('/') do
   erb(:home)
 end
 
-post('/') do
+post('/word-list') do
   word = WordModule::Word.new(params.fetch("word"))
   word.save
   @word_definition = word.definition_list.push(params.fetch("definition"))
@@ -22,7 +22,7 @@ post('/') do
   erb(:home)
 end
 
-post('/word-list') do
+get('/word-list') do
   erb(:home)
 end
 

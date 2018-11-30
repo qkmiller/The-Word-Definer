@@ -1,6 +1,6 @@
 <h1>Welcome to the Word Definer!</h1>
 
-<form class="form-group" action="/" method="post">
+<form class="form-group" action="/word-list" method="post">
   <label for="word">Word:</label>
   <input type="text" name="word"><br>
   <label for="definition">Definition:</label>
@@ -10,7 +10,7 @@
 
 <h2>List of words</h2><br>
 <% @@list.each do |item| %>
-  <a href="/word/<%= item.id %>"><%= item.word_name %></a>
+  <li><a href="/word/<%= item.id %>"><%= item.word_name %></a></li>
 <% end %>
 <br>
 <form class="form-group" action="/" method="get">
