@@ -28,4 +28,13 @@ describe (WordModule::Word) do
       expect(WordModule::Word.all).to(eq(["Blank", "Test"]))
     end
   end
+  describe('#see_word_ids') do
+    it('should list the unique IDs for all instances of word') do
+      new_word = WordModule::Word.new("Blank")
+      new_word2 = WordModule::Word.new("Test")
+      new_word.save
+      new_word2.save
+      expect(WordModule::Word.see_word_ids).to(eq([1, 2]))
+    end
+  end
 end
