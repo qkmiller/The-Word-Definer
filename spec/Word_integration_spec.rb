@@ -76,3 +76,15 @@ describe('the word definer', {:type => :feature}) do
     end
   end
 end
+describe('the word definer', {:type => :feature}) do
+  context('when entering a word, with a swear word for a definition') do
+    it('shows word but not the swear definition') do
+      visit('/')
+      fill_in('word', :with => 'hi')
+      fill_in('definition', :with => 'fuck')
+      click_button('Submit')
+      click_link('hi')
+      expect(page).to have_no_content("fuck")
+    end
+  end
+end
