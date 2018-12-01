@@ -45,5 +45,9 @@ module WordModule
     def self.find(id)
       @@word_objects[id.to_i - 1]
     end
+
+    def self.sort
+      @@word_objects = @@word_objets.sort_by {|obj| obj.word_name}
+    end
   end
 end

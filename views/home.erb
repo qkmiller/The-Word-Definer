@@ -9,7 +9,7 @@
 </form>
 
 <h2>List of words</h2><br>
-<% @@list.each do |item| %>
+<% WordModule::Word.all_objects.each do |item| %>
   <li><a href="/word/<%= item.id %>"><%= item.word_name %></a></li>
 <% end %>
 <br>

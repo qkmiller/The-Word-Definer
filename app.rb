@@ -6,9 +6,7 @@ require('pry')
 require('language_filter')
 require('./lib/filter')
 
-@@list = []
 get('/') do
-  @@list = []
   WordModule::Word.clear
   erb(:home)
 end
@@ -20,15 +18,9 @@ post('/word-list') do
   else
     if filter(definition)
     else
-      if params.fetch("definition") == ""
-      else
-        word.definition_list.push(definition)
-      end
+      word.definition_list.push(definition)
     end
     word.save
-
-    @@list.push(word)
-    @@list = @@list.sort_by {|obj| obj.word_name}
   end
   erb(:home)
 end
@@ -43,13 +35,9 @@ get('/word/:id') do
 end
 post('/word/:id') do
   @word = WordModule::Word.find(params[:id])
-  definition = params.fetch("definition")
-  if filter(definition)
+  if filter(params.fetch("definition"))
   else
-    if params.fetch("definition") == ""
-    else
-      @word.definition_list.push(params.fetch("definition"))
-    end
+    @word.definition_list.push(params.fetch("definition"))
   end
   erb(:word)
 end
