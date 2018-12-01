@@ -1,0 +1,24 @@
+body {
+  background-image: url(https://static1.squarespace.com/static/56a8df51fd5d08ec9be37e92/56afb3471a5203ae85f52afb/58ac8eb959cc6864b73a9888/1497892339389/KSC_Background_1920x1080.png?format=2500w);
+  text-align: left;
+}
+p {
+  text-align: center;
+}
+.center {
+  text-align: center;
+}
+.jumbotron {
+  margin-top: 50px;
+}
+.left {
+  text-align: left;
+}
+.definiton-title {
+  font-size: 30px;
+  text-decoration: underline;
+}
+.definition {
+  text-decoration: none;
+  font-style: italic;
+}

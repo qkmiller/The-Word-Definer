@@ -1,5 +1,9 @@
-<h1>Welcome to the Word Definer!</h1>
-
+<h1 class="center">Welcome to the Word Definer!</h1><br>
+<br>
+<p>Add a word with its definition, then watch it appear on the list below!</p><br>
+<p>If you would like to see the definition you added, click on the word!</p><br>
+<p>You may also add more than one definition by clicking on the word, then adding a new definition.</p><br>
+<br>
 <form class="form-group" action="/word-list" method="post">
   <label for="word">Word:</label>
   <input type="text" name="word" required pattern=".*\S+.*" title="This field is required"><br>
@@ -8,7 +12,7 @@
   <button type="submit" name="button">Submit</button>
 </form>
 
-<h2>List of words</h2><br>
+<h2>Below are the list of words:</h2><br>
 <% WordModule::Word.all_objects.each do |item| %>
   <li><a href="/word/<%= item.id %>"><%= item.word_name %></a></li>
 <% end %>

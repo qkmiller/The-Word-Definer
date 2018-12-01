@@ -1,15 +1,18 @@
-<h1><%= @word.word_name %></h1>
+<div class="left">
+  <h1><%= @word.word_name %></h1>
+  <ul class="definition-title">Definition(s):<ul>
+    <% @word.definition_list.each do |definition| %>
+    <li class="definition"><%= definition %></li>
+    <% end %>
+  </ul>
+</div>
+<br>
 <form action="/word/<%= @word.id %>" method="post">
-  <label for="definiton">Add a definition to this word:</label><br>
-  <input type="text" name="definition" required pattern=".*\S+.*" title="This field is required">
+  <label for="definition">Add a definition to this word:</label><br>
+  <input type="text" name="definition" required pattern=".*\S+.*" title="This field is required"><br>
   <button type="submit" name="button">Add definition</button>
 </form>
+<br>
 <form action="/word-list" method="get">
   <button type="submit" name="button">Go back</button>
 </form>
-<br>
-<ul>Definition(s):<ul>
-  <% @word.definition_list.each do |definition| %>
-  <li><%= definition %></li>
-  <% end %>
-</ul>
