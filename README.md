@@ -6,7 +6,7 @@
 
 ## Description
 
---------
+This is a ruby application that uses sinatra. Enter a word and a definition and watch it appear on the list below. You may also click on each entry and add more definitions.
 
 ## Setup/Installation Requirements
 
