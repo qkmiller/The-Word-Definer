@@ -43,9 +43,13 @@ get('/word/:id') do
 end
 post('/word/:id') do
   @word = WordModule::Word.find(params[:id])
-  if params.fetch("definition") == ""
+  definition = params.fetch("definition")
+  if filter(definition)
   else
-    @word.definition_list.push(params.fetch("definition"))
+    if params.fetch("definition") == ""
+    else
+      @word.definition_list.push(params.fetch("definition"))
+    end
   end
   erb(:word)
 end
