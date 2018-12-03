@@ -5,6 +5,7 @@ also_reload('lib/**/*.rb')
 require('pry')
 require('language_filter')
 require('./lib/filter')
+require('./lib/Word')
 
 get('/') do
   WordModule::Word.clear
