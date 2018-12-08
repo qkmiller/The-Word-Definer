@@ -12,10 +12,10 @@ This is a ruby application that uses sinatra. Enter a word and a definition and 
 
 
 * You need a web browser.
+* You can go to https://secure-waters-19574.herokuapp.com/ to use the app.
 * Any text editor should do if you want to edit my work. I used Atom.
 * You need a terminal with Ruby installed
 * Clone or download the repository, then type 'ruby app.rb' in your terminal. Then open your internet browser and type localhost:4567. You should now see the homepage.
-
 ## Known Bugs
 
 - None yet.
